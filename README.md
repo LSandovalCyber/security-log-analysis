@@ -61,25 +61,17 @@ Windows Logs → Security
 
 ## 🧪 Validation
 
-✔ Authentication events successfully generated from Windows 10 client
-✔ Event ID 4624 (successful logon) identified in Security logs
-✔ Event ID 4625 (failed logon) identified and analyzed
-✔ Log filtering used to isolate relevant security events
-✔ Event details reviewed to extract account and system information
+✔ Authentication events successfully generated from Windows 10 client  
+✔ Event ID 4624 (successful logon) identified in Security logs  
+✔ Event ID 4625 (failed logon) identified and analyzed  
+✔ Log filtering used to isolate relevant security events  
+✔ Event details reviewed to extract account and system information  
 
 ---
 
 ## 📸 Screenshots
 
-![Authentication Event](screenshots/02-event-4625.png)
-
-*Example authentication event in Windows Security log*
-
-![Event Details](screenshots/03-event-details.png)
-
-*Detailed view showing account, domain, and authentication information*
-
-Additional screenshots available in the [screenshots directory](screenshots/).
+Screenshots available in the [screenshots directory](screenshots/).
 
 ---
 
