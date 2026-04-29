@@ -65,13 +65,13 @@ Key fields analyzed:
 
 ## 📸 Screenshots
 
-![Authentication Event](screenshots/02-event-4625.png)
+![Authentication Event](/notes/screenshots/02-event-4625.png)
 *Example authentication event in Windows Security log*
 
-![Event Details](screenshots/03-event-details.png)
+![Event Details](/notes/screenshots/03-event-details.png)
 *Detailed view showing account, domain, and authentication information*
 
-📁 **View all screenshots:** [screenshots directory](screenshots/)
+📁 **View all screenshots:** [screenshots directory](notes/screenshots/)
 
 ---
 
