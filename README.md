@@ -1,92 +1,121 @@
-# 🛡️ Windows Authentication Log Analysis
+# 🛡️ Windows Authentication Log Analysis Lab
 
 ## 📌 Overview
 
-This project demonstrates how to analyze authentication events using Windows Event Viewer within an Active Directory lab environment.
+This project demonstrates how to analyze authentication activity within a Windows-based Active Directory environment using Event Viewer.
 
-The goal is to identify and interpret login activity to understand how systems log and track user authentication.
-
----
-
-## 🎯 Objective
-
-* Generate authentication activity from a domain-joined Windows 10 client
-* Locate relevant security events in Event Viewer
-* Analyze key fields to understand login behavior
+The lab focuses on identifying and interpreting login events to understand how systems log and track user authentication behavior.
 
 ---
 
 ## 🧱 Lab Environment
 
-* Windows Server 2022 (Domain Controller)
-* Windows 10 (Domain-joined client)
-* Domain: `lab.local`
-* Platform: VirtualBox
+| System              | Role                   | IP Address     |
+| ------------------- | ---------------------- | -------------- |
+| Windows Server 2022 | Domain Controller (DC) | 192.168.56.10  |
+| Windows 10 Client   | Domain-joined Machine  | 192.168.100.10 |
+
+* **Platform:** VirtualBox
+* **Domain:** lab.local
+* **Log Source:** Windows Security Event Log
 
 ---
 
-## ⚔️ Activity Performed
+## 🎯 Objectives
 
-* Performed multiple login attempts using domain credentials
-* Generated authentication events from the Windows 10 system
-* Observed how authentication activity is recorded in system logs
-
----
-
-## 🔍 Log Analysis
-
-### Event ID 4624 — Successful Logon
-
-This event indicates a successful authentication attempt.
-
-Key fields analyzed:
-
-* **Account Name** — user who logged in
-* **Account Domain** — domain of the user
-* **Logon Type** — method of login (interactive or network)
-* **Workstation Name** — source machine
+* Generate authentication activity within a domain environment
+* Identify relevant security events using Event Viewer
+* Analyze login behavior using Windows Security logs
+* Understand differences between successful and failed authentication events
+* Build foundational skills for security monitoring and incident detection
 
 ---
 
-### Event ID 4625 — Failed Logon
+## ⚙️ Configuration
 
-This event indicates a failed authentication attempt.
+### Event Viewer Access
 
-Key fields analyzed:
+Opened Event Viewer using:
 
-* **Account Name**
-* **Failure Reason** (e.g., incorrect password)
-* **Logon Type**
-* **Source Workstation**
+```bash
+eventvwr.msc
+```
 
-> Note: Logging behavior may vary depending on system configuration and authentication path in a lab environment.
+Navigated to:
+
+```plaintext
+Windows Logs → Security
+```
+
+---
+
+### Event Filtering
+
+* Used **Filter Current Log** to isolate authentication events
+* Focused on:
+
+  * Event ID 4624 (successful logon)
+  * Event ID 4625 (failed logon)
+
+---
+
+## 🧪 Validation
+
+✔ Authentication events successfully generated from Windows 10 client
+✔ Event ID 4624 (successful logon) identified in Security logs
+✔ Event ID 4625 (failed logon) identified and analyzed
+✔ Log filtering used to isolate relevant security events
+✔ Event details reviewed to extract account and system information
 
 ---
 
 ## 📸 Screenshots
 
-![Authentication Event](/notes/screenshots/02-event-4625.png)
+![Authentication Event](screenshots/02-event-4625.png)
+
 *Example authentication event in Windows Security log*
 
-![Event Details](/notes/screenshots/03-event-details.png)
+![Event Details](screenshots/03-event-details.png)
+
 *Detailed view showing account, domain, and authentication information*
 
-📁 **View all screenshots:** [screenshots directory](notes/screenshots/)
+Additional screenshots available in the [screenshots directory](screenshots/).
 
 ---
 
-## 🧠 Key Takeaways
+## 📚 Skills Demonstrated
 
-* Windows logs authentication activity in the Security log
-* Event Viewer is essential for investigating system and user behavior
-* Authentication events provide insight into login patterns and potential security issues
-* Log visibility depends on system configuration and where authentication occurs
+* Windows Event Viewer navigation and usage
+* Security log analysis (Event ID 4624 / 4625)
+* Understanding authentication workflows in Active Directory
+* Filtering and isolating relevant log data
+* Interpreting system-generated security events
 
 ---
 
-## 🚀 Skills Demonstrated
+## 🚧 Project Status
 
-* Log analysis using Windows Event Viewer
-* Understanding authentication events (4624 / 4625)
-* Interpreting security logs in an Active Directory environment
-* Troubleshooting logging behavior in a lab setup
+* [x] Authentication activity generated
+* [x] Security logs accessed and analyzed
+* [x] Event filtering implemented
+* [x] Key authentication events identified
+* [x] Event data interpreted and documented
+
+---
+
+## 🚀 Next Steps
+
+* Integrate centralized logging using SIEM (Splunk)
+* Simulate brute-force login attempts and analyze patterns
+* Correlate authentication logs across multiple systems
+* Develop detection rules for suspicious login activity
+
+---
+
+## 🧠 Key Takeaway
+
+* Developed foundational skills in analyzing authentication logs within a Windows environment
+* Gained hands-on experience using Event Viewer to investigate system activity
+* Understood how successful and failed logons are recorded and interpreted
+* Learned how log visibility depends on system configuration and authentication path
+* Established a baseline for transitioning into SIEM-based security monitoring
