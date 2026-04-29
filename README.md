@@ -71,7 +71,7 @@ Windows Logs → Security
 
 ## 📸 Screenshots
 
-Screenshots available in the [screenshots directory](screenshots/).
+Screenshots available in the [screenshots directory](notes/screenshots).
 
 ---
 
